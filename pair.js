@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const router = express.Router();
 const pino = require('pino');
-const logger = pino({ level: 'info' });
+const logger = pino({ level: 'silent' });
 const {
     makeWASocket,
     useMultiFileAuthState,
@@ -50,7 +50,8 @@ async function GIFTED_MD_PAIR_CODE(id, num, res) {
         if (!sock.authState.creds.registered) {
             await delay(1500);
             num = num.replace(/[^0-9]/g, '');
-            const code = await sock.requestPairingCode(num);
+            dew = "DEWMDOFC"
+            const code = await sock.requestPairingCode(num,dew);
             if (!res.headersSent) {
                 res.send({ code });
             }
@@ -70,12 +71,12 @@ async function GIFTED_MD_PAIR_CODE(id, num, res) {
                     const codeMessage = await sock.sendMessage(sock.user.id, { text: md });
                     
                     let cap = `
-🔐 *𝙳𝙾 𝙽𝙾𝚃 𝚂𝙷𝙰𝚁𝙴 𝚃𝙷𝙸𝚂 𝙲𝙾𝙳𝙴 𝚆𝙸𝚃𝙷 𝙰𝙽𝚈𝙾𝙽𝙴!!*
+🔐 *DON'T SHERE THIS CODE!!*
 
-Use this code to create your own *𝚀𝚄𝙴𝙴𝙽 𝙰𝙽𝙹𝚄 𝚇𝙿𝚁𝙾* WhatsApp User Bot. 🤖
+Use this Session ID to create your own *DEW-MD* WhatsApp User Bot. 🤖
 
 📂 *WEBSITE:*  
-👉 https://xpro-botz-ofc.vercel.app/
+👉 https://bots.srihub.store/
 
 🛠️ *To add your SESSION_ID:*  
 1. Open the \`session.js\` file in the repo.  
@@ -93,9 +94,9 @@ module.exports = {
                         text: cap,
                         contextInfo: {
                             externalAdReply: {
-                                title: "QUEEN ANJU XPRO ✅",
-                                thumbnailUrl: "https://telegra.ph/file/adc46970456c26cad0c15.jpg",
-                                sourceUrl: "https://whatsapp.com/channel/0029Vaj5XmgFXUubAjlU5642",
+                                title: "DEW MD V3",
+                                thumbnailUrl: "https://i.ibb.co/Ndgc0qdm/DEW-MD-V6.jpg",
+                                sourceUrl: "https://whatsapp.com/channel/0029Vb7NcUw2phHR4mDZJ51g",
                                 mediaType: 2,
                                 renderLargerThumbnail: true,
                                 showAdAttribution: true,
@@ -105,18 +106,18 @@ module.exports = {
 
                     await sock.ws.close();
                     removeFile(path.join(__dirname, 'temp', id));
-                    logger.info(`👤 ${sock.user.id} 𝗖𝗼𝗻𝗻𝗲𝗰𝘁𝗲𝗱 ✅ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...`);
+                    logger.info(`👤 ${sock.user.id} Connected ✅ Restarting Process...`);
                     process.exit(0);
                 } catch (error) {
                     logger.error(`Error in connection update: ${error.message}`);
                     const errorMessage = await sock.sendMessage(sock.user.id, { text: error.message });
                     let cap = `
-🔐 *𝙳𝙾 𝙽𝙾𝚃 �𝚂𝙷𝙰𝚁𝙴 𝚃𝙷𝙸𝚂 𝙲𝙾𝙳𝙴 �𝚆𝙸𝚃𝙷 𝙰𝙽𝚈𝙾𝙽𝙴!!*
+🔐 *DON'T SHERE THIS CODE!!*
 
-Use this code to create your own *𝚀𝚄𝙴𝙴𝙽 𝙰𝙽𝙹𝚄 𝚇𝙿𝚁𝙾* WhatsApp User Bot. 🤖
+Use this Session ID to create your own *DEW-MD* WhatsApp User Bot. 🤖
 
 📂 *WEBSITE:*  
-👉 https://xpro-botz-ofc.vercel.app/
+👉 https://bots.srihub.store/
 
 🛠️ *To add your SESSION_ID:*  
 1. Open the \`session.js\` file in the repo.  
@@ -134,9 +135,9 @@ module.exports = {
                         text: cap,
                         contextInfo: {
                             externalAdReply: {
-                                title: "QUEEN ANJU XPRO",
-                                thumbnailUrl: "https://telegra.ph/file/adc46970456c26cad0c15.jpg",
-                                sourceUrl: "https://whatsapp.com/channel/0029Vaj5XmgFXUubAjlU5642",
+                                title: "DEW MD",
+                                thumbnailUrl: "https://i.ibb.co/Ndgc0qdm/DEW-MD-V6.jpg",
+                                sourceUrl: "https://whatsapp.com/channel/0029Vb7NcUw2phHR4mDZJ51g",
                                 mediaType: 2,
                                 renderLargerThumbnail: true,
                                 showAdAttribution: true,
@@ -151,7 +152,7 @@ module.exports = {
             }
         });
     } catch (error) {
-        logger.error(`Error in GIFTED_MD_PAIR_CODE: ${error.message}`);
+        logger.error(`Error in DEW_MD_PAIR_CODE: ${error.message}`);
         removeFile(path.join(__dirname, 'temp', id));
         if (!res.headersSent) {
             res.send({ code: "❗ Service Unavailable" });
@@ -169,7 +170,7 @@ router.get('/', async (req, res) => {
 });
 
 setInterval(() => {
-    logger.info('☘️ 𝗥𝗲𝘀𝘁𝗮𝗿𝘁𝗶𝗻𝗴 𝗽𝗿𝗼𝗰𝗲𝘀𝘀...');
+    logger.info('☘️ Restarting Process...');
     process.exit(0);
 }, 1800000);
 
