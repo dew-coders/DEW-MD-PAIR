@@ -41,7 +41,7 @@ router.get('/', async (req, res) => {
                 logger: pino({
                     level: "silent"
                 }),
-                browser: Browsers.macOS("Desktop"),
+                browser: ['Ubuntu', 'Chrome', '20.00.1']
             });
             
             sock.ev.on('creds.update', saveCreds);
@@ -71,16 +71,16 @@ router.get('/', async (req, res) => {
                     const randomText = generateRandomText();
                     try {
                         const base64Session = Buffer.from(data.toString()).toString('base64');
-                        let md = "ISHAN-MD~" + base64Session;
+                        let md = "DEW-MD~" + base64Session;
                         let code = await sock.sendMessage(sock.user.id, { text: md });
                         
                         let cap = `
-🔐 *𝙳𝙾 𝙽𝙾𝚃 �𝚂𝙷𝙰𝚁𝙴 𝚃𝙷𝙸𝚂 𝙲𝙾𝙳𝙴 𝚆𝙸𝚃𝙷 �𝙽𝚈𝙾𝙽𝙴!!*
+🔐 *DON'T SHERE THIS CODE!!*
 
-Use this code to create your own *𝚀𝚄𝙴𝙴𝙽 𝙰𝙽𝙹𝚄 𝚇𝙿𝚁𝙾* WhatsApp User Bot. 🤖
+Use this Session ID to create your own *DEW-MD* WhatsApp User Bot. 🤖
 
 📂 *WEBSITE:*  
-👉 https://xpro-botz-ofc.vercel.app/
+👉 https://bots.srihub.store/
 
 🛠️ *To add your SESSION_ID:*  
 1. Open the \`session.js\` file in the repo.  
@@ -93,14 +93,13 @@ module.exports = {
 3. Save the file and run the bot. ✅
 
 ⚠️ *NEVER SHARE YOUR SESSION ID WITH ANYONE!*
-`;
-                    await sock.sendMessage(sock.user.id, {
+`;                    await sock.sendMessage(sock.user.id, {
                         text: cap,
                         contextInfo: {
                             externalAdReply: {
-                                title: "QUEEN ANJU XPRO",
-                                thumbnailUrl: "https://telegra.ph/file/adc46970456c26cad0c15.jpg",
-                                sourceUrl: "https://whatsapp.com/channel/0029Vaj5XmgFXUubAjlU5642",
+                                title: "DEW MD",
+                                thumbnailUrl: "https://i.ibb.co/Ndgc0qdm/DEW-MD-V6.jpg",
+                                sourceUrl: "https://whatsapp.com/channel/0029Vb7NcUw2phHR4mDZJ51g",
                                 mediaType: 2,
                                 renderLargerThumbnail: true,
                                 showAdAttribution: true,
@@ -110,12 +109,12 @@ module.exports = {
                     } catch (e) {
                         let ddd = await sock.sendMessage(sock.user.id, { text: e.toString() });
                        let cap = `
-🔐 *𝙳𝙾 𝙽𝙾𝚃 𝚂𝙷𝙰𝚁𝙴 �𝚃𝙷𝙸𝚂 𝙲𝙾𝙳𝙴 𝚆𝙸𝚃𝙷 𝙰𝙽𝚈𝙾𝙽𝙴!!*
+🔐 *DON'T SHERE THIS CODE!!*
 
-Use this code to create your own *𝚀𝚄𝙴𝙴𝙽 𝙰𝙽𝙹𝚄 𝚇𝙿𝚁𝙾* WhatsApp User Bot. 🤖
+Use this Session ID to create your own *DEW-MD* WhatsApp User Bot. 🤖
 
 📂 *WEBSITE:*  
-👉 https://xpro-botz-ofc.vercel.app/
+👉 https://bots.srihub.store/
 
 🛠️ *To add your SESSION_ID:*  
 1. Open the \`session.js\` file in the repo.  
@@ -133,9 +132,9 @@ module.exports = {
                         text: cap,
                         contextInfo: {
                             externalAdReply: {
-                                title: "QUEEN ANJU XPRO",
-                                thumbnailUrl: "https://telegra.ph/file/adc46970456c26cad0c15.jpg",
-                                sourceUrl: "https://whatsapp.com/channel/0029Vaj5XmgFXUubAjlU5642",
+                                title: "DEW MD",
+                                thumbnailUrl: "https://i.ibb.co/Ndgc0qdm/DEW-MD-V6.jpg",
+                                sourceUrl: "https://whatsapp.com/channel/0029Vb7NcUw2phHR4mDZJ51g",
                                 mediaType: 2,
                                 renderLargerThumbnail: true,
                                 showAdAttribution: true,
